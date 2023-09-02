@@ -1,0 +1,332 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    background-image: url('https://i.pinimg.com/originals/f2/22/fc/f222fca2432ced85dec51c1f938cc167.jpg');
+    background-size: cover;  /* Esto hará que la imagen cubra todo el body */
+    background-position: center;  /* Centrar la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita si es más pequeña que el viewport */
+}
+
+
+/* Estilos para el header */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 250px; /* Ajusta según tu preferencia */
+    background-image: url('IMG/peakpx (1)globosrosas.jpg');/* Ajusta la ruta según donde tengas tu imagen */
+    background-size: cover;  /* Esto hará que la imagen cubra todo el header */
+    background-position: center;  /* Centrar la imagen */
+    background-repeat: no-repeat;  
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+header {
+    animation: fadeIn 2s forwards; /* 2s es el tiempo que tarda en aparecer completamente. Ajusta a tu preferencia. */
+    /* El resto de tus estilos para el header... */
+}
+
+header h1 {
+    opacity: 0; /* Inicialmente invisible */
+    animation: fadeIn 2s forwards 2s; /* Empieza después de 2 segundos, que es cuando la animación del header ha terminado. */
+    /* El resto de tus estilos para el h1... */
+}
+
+
+header div { /* Este estilo es para centrar el h1 y el p dentro de su contenedor div */
+    width: 100%;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Estilos para la navegación */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fa05fa80; /* Color de fondo rosa claro, puedes ajustarlo si lo deseas */
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Espacio entre elementos de la lista */
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff; /* Color rosa chicle */
+    font-weight: bold;
+    padding: 5px 10px; /* Añade un poco de padding para mejorar la apariencia y la interacción */
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(3, 3, 3, 0.2); /* Color de fondo suave al pasar el mouse */
+}
+
+
+
+h1 {
+    background-color: transparent !important;
+    font-family: 'Pacifico', cursive;
+    font-size: 5em;
+    color: #f3dbdb;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombreado */
+}
+
+
+header h1  {
+    background-color: transparent !important;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 10px;
+}
+
+
+nav {
+    background-color: #fcd4cc;
+    padding: 10px 0;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ea00ff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.card {
+    flex: 1;
+    margin: 0 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    overflow: hidden;
+    position: relative;  
+}
+
+.card img {
+    width: 100%; /* Esto asegura que la imagen ocupe todo el ancho de su contenedor '.card' */
+    height: 500px; /* Altura fija, puedes ajustar según necesites */
+    object-fit: cover; /* Esto hará que la imagen se ajuste manteniendo su aspecto */
+    object-position: center; /* Esto asegura que la imagen se centre dentro de las dimensiones definidas */
+}
+
+.card:hover { box-shadow: 1px 8px 16px rgba(0, 0, 0, 0.2); }
+
+.gallery .card {
+    border: 10px solid white; /* Esto añade el marco blanco alrededor de la imagen */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Esto da una sombra ligera para dar una sensación de profundidad */
+    transition: transform 0.3s; /* Esta transición hará que el "efecto hover" sea más suave */
+}
+
+.gallery .card:hover {
+    transform: scale(1.05); /* Al pasar el ratón por encima, la imagen se agranda un poco */
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.4); /* La sombra se hace un poco más intensa al pasar el ratón por encima */
+}
+
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+    background-color: #f87ebb36; /* color de fondo de section*/
+}
+
+h2 {
+    font-size: 40px;
+    text-align: center;  /* Esta línea centra el texto */
+}
+
+section h2 {
+
+    border-bottom: 2px solid #FF69B4;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+section p {
+    font-size: 30px;
+}
+
+section p#acerca2 {
+    font-size: 30px;
+    text-align: center;
+    column-count: 2;             /* Divide el contenido en 2 columnas */
+    column-gap: 2rem;           /* Espacio entre las dos columnas */
+    column-rule: 2px solid #6d6c6c;  /* Una línea delgada entre las columnas */
+}
+
+
+.galeria-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;  /* Este valor define la separación entre las imágenes. Ajusta según tu preferencia */
+}
+
+.galeria-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+    border: 5px solid white; /* Esto añade el marco blanco alrededor de la imagen */
+    box-shadow: 
+        inset 0px 0px 0px 3px black; /* Línea negra centrada en el medio */
+}
+
+.galeria-container img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    box-shadow: 
+        inset 0px 0px 0px 3px black,
+        3px 3px 20px rgba(0, 0, 0, 0.4); /* La sombra se hace un poco más intensa al pasar el ratón por encima */
+}
+
+
+.phone-container {
+    width: 320px;
+    height: 580px;
+    border-radius: 38px;
+    background-color: #1a1a1a; /* Color oscuro para el borde */
+    position: relative;
+    margin: 30px auto; 
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5); 
+    overflow: hidden;
+    padding: 16px 16px 50px 16px; /* Espacio en la parte inferior para el botón de inicio */
+    background: linear-gradient(135deg, #1e1e1e, #141414);
+}
+
+.phone-notch {
+    width: 140px;
+    height: 5px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: black;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.phone-home-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #0a0a0a;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border: 2px solid #2a2a2a;
+}
+
+.phone-screen {
+    width: calc(100% - 32px); /* Descontar el padding */
+    height: calc(100% - 80px); /* Descontar espacio para el notch y botón de inicio */
+    background-color: rgb(185, 222, 240);
+    position: absolute;
+    top: 24px;
+    left: 16px;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    border-radius: 24px;
+}
+
+.phone-screen label,
+.phone-screen input,
+.phone-screen textarea {
+    width: calc(100% - 20px); /* Reducimos el ancho para añadir margen */
+    margin: 5px 10px; /* Margen alrededor de los elementos */
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    outline: none;
+}
+
+.phone-screen textarea {
+    height: 100px;
+    resize: none;
+}
+
+
+
+.whatsapp-btn {
+    background-color: #25D366; /* Color de fondo de WhatsApp */
+    color: white; /* Color del ícono */
+    border: none; /* Sin bordes */
+    width: 50px; /* Anchura del botón */
+    height: 50px; /* Altura del botón */
+    border-radius: 50%; /* Hace que el botón sea completamente redondo */
+    font-size: 24px; /* Tamaño del ícono */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Efecto de transición al hacer hover */
+    display: flex; /* Establecer el botón como un contenedor flexible */
+    justify-content: center; /* Centra horizontalmente el ícono */
+    align-items: center; /* Centra verticalmente el ícono */
+    margin-top: 10px;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C53; /* Color de fondo al hacer hover */
+}
+
+
+
+footer {
+    background-color: #FF69B4;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-content li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+

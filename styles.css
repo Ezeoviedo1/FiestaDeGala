@@ -2,10 +2,19 @@ body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
     background-image: url('https://i.pinimg.com/originals/f2/22/fc/f222fca2432ced85dec51c1f938cc167.jpg');
-    background-size: cover;  /* Esto hará que la imagen cubra todo el body */
-    background-position: center;  /* Centrar la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita si es más pequeña que el viewport */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;  /* Ajustamos el tamaño de la fuente para mejorar la legibilidad en pantallas pequeñas */
+        background-size: auto 100%;  /* Establece el ancho de la imagen de fondo al ancho del dispositivo y ajusta la altura automáticamente */
+        background-position: top center;  /* Ajustamos la posición de la imagen para centrarla en la parte superior */
+    }
+}
+
 
 
 /* Estilos para el header */
@@ -15,10 +24,19 @@ header {
     align-items: center;
     padding: 250px; /* Ajusta según tu preferencia */
     background-image: url('IMG/peakpx (1)globosrosas.jpg');/* Ajusta la ruta según donde tengas tu imagen */
-    background-size: cover;  /* Esto hará que la imagen cubra todo el header */
-    background-position: center;  /* Centrar la imagen */
+    background-size: cover; 
+    background-position: center;
     background-repeat: no-repeat;  
 }
+
+@media (max-width: 480px) {
+    header {
+        padding: 100px 20px; /* Reduzco el padding significativamente, especialmente en la parte superior e inferior, y dejo algo de espacio a los lados */
+        background-size: auto 100%;  /* Establece el ancho de la imagen de fondo al ancho del dispositivo y ajusta la altura automáticamente */
+        background-position: top center;  /* Ajustamos la posición de la imagen para centrarla en la parte superior */
+    }
+}
+
 
 @keyframes fadeIn {
     from {
@@ -46,6 +64,7 @@ header div { /* Este estilo es para centrar el h1 y el p dentro de su contenedor
     text-align: center;
     padding: 0 20px;
 }
+
 
 /* Estilos para la navegación */
 nav {
@@ -81,6 +100,21 @@ nav a:hover {
     background-color: rgba(3, 3, 3, 0.2); /* Color de fondo suave al pasar el mouse */
 }
 
+@media (max-width: 480px) {
+    nav ul {
+        display: block; /* Cambia la disposición flex a bloque para apilar los elementos */
+    }
+    
+    nav li {
+        margin-bottom: 10px; /* Añade un espacio entre los elementos de la lista */
+    }
+
+    nav a {
+        display: block; /* Hace que los enlaces ocupen toda la línea, facilitando el toque en dispositivos táctiles */
+        padding: 10px; /* Aumenta el padding para mejorar la apariencia y la interacción en móviles */
+        text-align: center; /* Centra el texto de los enlaces */
+    }
+}
 
 
 h1 {
@@ -91,15 +125,13 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombreado */
 }
 
-
-header h1  {
+header h1 {
     background-color: transparent !important;
     display: inline-block;
     position: relative;
     z-index: 2;
     margin-bottom: 10px;
 }
-
 
 nav {
     background-color: #fcd4cc;
@@ -118,29 +150,73 @@ nav a:hover {
     color: #ffffff;
 }
 
+/* Media Queries para pantallas de 480px o menos */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 3em; /* Reducimos el tamaño de la fuente para pantallas pequeñas */
+        text-align: center; /* Centramos el texto para una mejor presentación */
+    }
+
+    header h1 {
+        margin-bottom: 5px; /* Reducimos el margen inferior */
+        display: block; /* Cambiamos a bloque para asegurarnos de que ocupe todo el ancho */
+    }
+
+    nav {
+        text-align: center; /* Centramos los elementos dentro del nav */
+    }
+
+    nav a {
+        margin: 0 10px; /* Ajustamos los márgenes alrededor de los enlaces */
+        display: inline-block; /* Esto asegura que los márgenes se apliquen correctamente */
+    }
+}
+
+
+
+/* Estilos base para .gallery y .card */
 .gallery {
     display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten al siguiente renglón si no hay espacio suficiente */
     justify-content: space-between;
     margin-top: 1rem;
 }
 
 .card {
     flex: 1;
-    margin: 0 0.5rem;
+    margin: 0.5rem; /* Pequeño margen alrededor para que no se peguen las tarjetas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     overflow: hidden;
-    position: relative;  
+    position: relative; 
+    width: 100%; /* Las tarjetas ocuparán todo el ancho del contenedor en dispositivos pequeños */
 }
 
 .card img {
-    width: 100%; /* Esto asegura que la imagen ocupe todo el ancho de su contenedor '.card' */
-    height: 500px; /* Altura fija, puedes ajustar según necesites */
-    object-fit: cover; /* Esto hará que la imagen se ajuste manteniendo su aspecto */
-    object-position: center; /* Esto asegura que la imagen se centre dentro de las dimensiones definidas */
+    width: 100%; 
+    height: auto;
+    object-fit: cover;
+    object-position: center; 
 }
 
 .card:hover { box-shadow: 1px 8px 16px rgba(0, 0, 0, 0.2); }
+
+/* Media Queries */
+
+/* Para tabletas (opcional: si deseas un diseño diferente para tabletas) */
+@media (min-width: 768px) {
+    .card {
+        width: calc(50% - 1rem); /* Dos tarjetas por fila en tabletas */
+    }
+}
+
+/* Para escritorios */
+@media (min-width: 1024px) {
+    .card {
+        width: calc(33.33% - 1rem); /* Tres tarjetas por fila en escritorios */
+    }
+}
+
 
 .gallery .card {
     border: 10px solid white; /* Esto añade el marco blanco alrededor de la imagen */
@@ -330,4 +406,7 @@ footer {
 .footer-content a:hover {
     text-decoration: underline;
 }
+
+
+
 
